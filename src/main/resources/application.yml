@@ -1,0 +1,15 @@
+server:
+  port: 8081
+spring:
+  jackson:
+    time-zone: UTC  # 注意这里使用冒号而不是等号
+  datasource:
+    url: jdbc:mysql://localhost:3306/barbershopsystem?characterEncoding=utf-8&serverTimezone=UTC
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  redis:  # 注意这里redis应该是与datasource平级的，而不是其内部的子项
+    host: localhost
+    port: 6379
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/**/*.xml
